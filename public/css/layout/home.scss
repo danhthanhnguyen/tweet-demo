@@ -1,0 +1,516 @@
+@font-face {
+    src: url("../../fonts/sofiapro-light.otf");
+    font-family: "sofia-pro";
+}
+
+@font-face {
+    src: url("../../fonts/cubano-regular.ttf");
+    font-family: "cubano-regular";
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+html {
+    font-size: 12px;
+    font-family: 'SF Pro Display', sans-serif;
+    min-height: 100vh;
+}
+
+.btn-control {
+    border: none;
+    box-shadow: none;
+    border-radius: 18px;
+    background: #00acc1!important;
+    font-family: "cubano-regular";
+    padding: .34rem 1.78rem;
+    transition: .5s ease;
+    //box-shadow: 0 2px 2px 0 rgba(0, 188, 212, .14), 0 3px 1px -2px rgba(0, 188, 212, .2), 0 1px 5px 0 rgba(0, 188, 212, .12);
+    &:hover {
+        background: #00A1B5!important;
+        transition: .5s ease;
+        //box-shadow: 0 2px 2px 0 rgba(0, 188, 212, .42), 0 3px 1px -2px rgba(0, 188, 212, .12), 0 1px 5px 0 rgba(0, 188, 212, .2);
+    }
+    &:focus {
+        box-shadow: none!important;
+    }
+}
+
+.navbar {
+    background-color: rgba(9,20,154,0.55);
+    .nav-item {
+        .nav-link {
+            font-family: "cubano-regular";
+        }
+    }
+}
+
+.main {
+    a {
+        text-decoration: none;
+        color: #000000;
+    }
+    .form-control {
+        font-size: 1.2rem;
+    }
+    .btn-tweet, .btn-update-profile, .btn-follow {
+        padding-top: .8rem;
+        padding-bottom: .8rem;
+    }
+    .avatar {
+        cursor: pointer;
+        width: 48px;
+        height: 48px;
+        .avatar-user {
+            width: 48px;
+            height: 48px;
+        }
+        .active-tooltip {
+            position: relative;
+            top: 5px;
+            width: 250px;
+            height: auto;
+            user-select: none;
+            pointer-events: none;
+            clip-path: circle(0% at 0% 0%);
+            background: #3c4146;
+            border-radius: 3px;
+            cursor: auto;
+            z-index: 1000001;
+            box-shadow: -3px 3px 2px 0 rgba(60, 65, 67, .12), 0 3px 1px -2px rgba(60, 65, 67, .18), -3px 3px 5px 0 rgba(60, 65, 67, .15);
+            animation: zoomTooltip forwards .35s cubic-bezier(1,.25,0,.78);
+            &::before {
+                content: "";
+                position: absolute;
+                border: 5px solid transparent;
+                border-bottom: 5px solid #3c4146;
+                top: 0;
+                left: 24px;
+                transform: translate(-50%, -99%);
+            }
+            .tooltip-avatar-user {
+                border-radius: 3px;
+                width: 54px;
+                height: 54px;
+            }
+            .tooltip-name {
+                font-size: 1.2422rem;
+            }
+            .tooltip-user-name, .tooltip-following, .tooltip-follower {
+                font-size: 0.9668rem;
+                font-family: 'sofia-pro';
+            }
+            .tooltip-following, .tooltip-follower {
+                font-size: 0.8668rem!important;
+            }
+            @keyframes zoomTooltip {
+                0% {
+                    clip-path: circle(0% at 0% 0%);
+                }
+                100% {
+                    clip-path: circle(150% at 0% 0%);
+                }
+            }
+        }
+    }
+    .user-name-tweet, .tweets-following-follower-counter {
+        font-family: "sofia-pro";
+        font-size: 1.1888rem;
+    }
+    .user-name-tweet {
+        color: #6e767d;
+    }
+    .full-name-tweet {
+        font-size: 1.2rem!important;
+    }
+    .user-profile {
+        .location, .birthday, .joined {
+            color: #6e767d;
+            .location-name-country, .user-birthday, .user-joined {
+                padding: 0 0.386rem;
+                font-size: 1.2888rem;
+                display: flex;
+                align-items: end;
+                svg {
+                    width: 1.5656rem;
+                    margin-right: 0.1668rem;
+                }
+            }
+        }
+    }
+    .time-tweet {
+        font-size: .945rem;
+    }
+    .content-tweet {
+        font-size: 1.353rem;
+    }
+    .like-tweet {
+        svg {
+            cursor: pointer;
+            overflow: visible;
+            width: 40px;
+        }
+        
+        svg #heart {
+            transform-origin: center;
+            animation: animateHeartOut .3s linear forwards;
+        }
+        
+        svg #main-circ {
+            transform-origin: 29.5px 29.5px;
+        }
+        
+        .checkbox {
+            display: none;
+        }
+        
+        .checkbox:checked+label svg #heart {
+            transform: scale(0.2);
+            fill: #E2264D;
+            animation: animateHeart .3s linear forwards .25s;
+        }
+        
+        .checkbox:checked+label svg #main-circ {
+            transition: all 2s;
+            animation: animateCircle .3s linear forwards;
+            opacity: 1;
+        }
+        
+        .checkbox:checked+label svg #grp1 {
+            opacity: 1;
+            transition: .1s all .3s;
+        }
+        
+        .checkbox:checked+label svg #grp1 #oval1 {
+            transform: scale(0) translate(0, -30px);
+            transform-origin: 0 0 0;
+            transition: .5s transform .3s;
+        }
+        
+        .checkbox:checked+label svg #grp1 #oval2 {
+            transform: scale(0) translate(10px, -50px);
+            transform-origin: 0 0 0;
+            transition: 1.5s transform .3s;
+        }
+        
+        .checkbox:checked+label svg #grp2 {
+            opacity: 1;
+            transition: .1s all .3s;
+        }
+        
+        .checkbox:checked+label svg #grp2 #oval1 {
+            transform: scale(0) translate(30px, -15px);
+            transform-origin: 0 0 0;
+            transition: .5s transform .3s;
+        }
+        
+        .checkbox:checked+label svg #grp2 #oval2 {
+            transform: scale(0) translate(60px, -15px);
+            transform-origin: 0 0 0;
+            transition: 1.5s transform .3s;
+        }
+        
+        .checkbox:checked+label svg #grp3 {
+            opacity: 1;
+            transition: .1s all .3s;
+        }
+        
+        .checkbox:checked+label svg #grp3 #oval1 {
+            transform: scale(0) translate(30px, 0px);
+            transform-origin: 0 0 0;
+            transition: .5s transform .3s;
+        }
+        
+        .checkbox:checked+label svg #grp3 #oval2 {
+            transform: scale(0) translate(60px, 10px);
+            transform-origin: 0 0 0;
+            transition: 1.5s transform .3s;
+        }
+        
+        .checkbox:checked+label svg #grp4 {
+            opacity: 1;
+            transition: .1s all .3s;
+        }
+        
+        .checkbox:checked+label svg #grp4 #oval1 {
+            transform: scale(0) translate(30px, 15px);
+            transform-origin: 0 0 0;
+            transition: .5s transform .3s;
+        }
+        
+        .checkbox:checked+label svg #grp4 #oval2 {
+            transform: scale(0) translate(40px, 50px);
+            transform-origin: 0 0 0;
+            transition: 1.5s transform .3s;
+        }
+        
+        .checkbox:checked+label svg #grp5 {
+            opacity: 1;
+            transition: .1s all .3s;
+        }
+        
+        .checkbox:checked+label svg #grp5 #oval1 {
+            transform: scale(0) translate(-10px, 20px);
+            transform-origin: 0 0 0;
+            transition: .5s transform .3s;
+        }
+        
+        .checkbox:checked+label svg #grp5 #oval2 {
+            transform: scale(0) translate(-60px, 30px);
+            transform-origin: 0 0 0;
+            transition: 1.5s transform .3s;
+        }
+        
+        .checkbox:checked+label svg #grp6 {
+            opacity: 1;
+            transition: .1s all .3s;
+        }
+        
+        .checkbox:checked+label svg #grp6 #oval1 {
+            transform: scale(0) translate(-30px, 0px);
+            transform-origin: 0 0 0;
+            transition: .5s transform .3s;
+        }
+        
+        .checkbox:checked+label svg #grp6 #oval2 {
+            transform: scale(0) translate(-60px, -5px);
+            transform-origin: 0 0 0;
+            transition: 1.5s transform .3s;
+        }
+        
+        .checkbox:checked+label svg #grp7 {
+            opacity: 1;
+            transition: .1s all .3s;
+        }
+        
+        .checkbox:checked+label svg #grp7 #oval1 {
+            transform: scale(0) translate(-30px, -15px);
+            transform-origin: 0 0 0;
+            transition: .5s transform .3s;
+        }
+        
+        .checkbox:checked+label svg #grp7 #oval2 {
+            transform: scale(0) translate(-55px, -30px);
+            transform-origin: 0 0 0;
+            transition: 1.5s transform .3s;
+        }
+        
+        .checkbox:checked+label svg #grp2 {
+            opacity: 1;
+            transition: .1s opacity .3s;
+        }
+        
+        .checkbox:checked+label svg #grp3 {
+            opacity: 1;
+            transition: .1s opacity .3s;
+        }
+        
+        .checkbox:checked+label svg #grp4 {
+            opacity: 1;
+            transition: .1s opacity .3s;
+        }
+        
+        .checkbox:checked+label svg #grp5 {
+            opacity: 1;
+            transition: .1s opacity .3s;
+        }
+        
+        .checkbox:checked+label svg #grp6 {
+            opacity: 1;
+            transition: .1s opacity .3s;
+        }
+        
+        .checkbox:checked+label svg #grp7 {
+            opacity: 1;
+            transition: .1s opacity .3s;
+        }
+        
+        @keyframes animateCircle {
+            40% {
+                transform: scale(10);
+                opacity: 1;
+                fill: #DD4688;
+            }
+            55% {
+                transform: scale(11);
+                opacity: 1;
+                fill: #D46ABF;
+            }
+            65% {
+                transform: scale(12);
+                opacity: 1;
+                fill: #CC8EF5;
+            }
+            75% {
+                transform: scale(13);
+                opacity: 1;
+                fill: transparent;
+                stroke: #CC8EF5;
+                stroke-width: .5;
+            }
+            85% {
+                transform: scale(17);
+                opacity: 1;
+                fill: transparent;
+                stroke: #CC8EF5;
+                stroke-width: .2;
+            }
+            95% {
+                transform: scale(18);
+                opacity: 1;
+                fill: transparent;
+                stroke: #CC8EF5;
+                stroke-width: .1;
+            }
+            100% {
+                transform: scale(19);
+                opacity: 1;
+                fill: transparent;
+                stroke: #CC8EF5;
+                stroke-width: 0;
+            }
+        }
+        
+        @keyframes animateHeart {
+            0% {
+                transform: scale(0.2);
+            }
+            40% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes animateHeartOut {
+            0% {
+                transform: scale(1.4);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
+
+    .user-avatar {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        .user-profile-avatar {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .user-profile-name {
+        font-family: "sofia-pro";
+        padding-top: .5rem;
+        margin: 0;
+        font-size: 1.945rem;
+    }
+    .user-bio {
+        margin: 0.3472rem 0;
+        .user-profile-bio {
+            font-family: "sofia-pro";
+            max-width: 370px;
+            margin: 0 auto;
+            font-size: 1.388rem;
+        }
+    }
+    .like-counter {
+        user-select: none;
+    }
+    .trash {
+        width: 1.4654rem;
+        cursor: pointer;
+    }
+
+    // update-profile
+    .update-profile {
+        .jumbotron {
+            background-color: rgba(230, 230, 230, .3);
+            box-shadow: -3px 3px 2px 0 rgba(230, 230, 230, .38), 0 3px 1px -2px rgba(230, 230, 230, .3), -3px 3px 5px 0 rgba(230, 230, 230, .32);
+            border-radius: 1.28rem;
+            label {
+                font-family: "cubano-regular";
+                color: #6e767d;
+            }
+            .form-control {
+                background-color: rgba(134, 166, 223, 0);
+            }
+            .update-avatar-user {
+                position: relative;
+                width: 120px;
+                height: 120px;
+                .avatar {
+                    width: 100%;
+                    height: 100%;
+                }
+                .active-upload {
+                    display: block!important;
+                }
+                .upload {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    .upload-avatar {
+                        display: none;
+                    }
+                    label {
+                        transition: .5s ease;
+                        width: 100%;
+                        height: 100%;
+                        margin: 0;
+                        position: relative;
+                        border-radius: 50%;
+                        background-color: rgba(0, 0 , 0, .05);
+                        transition: .5s ease;
+                        cursor: pointer;
+                        z-index: 1001;
+                        &:hover {
+                            background-color: rgba(0, 0 , 0, .4);
+                            transition: .5s ease;
+                        }
+                    }
+                    ion-icon {
+                        color: #ffffff;
+                        font-size: 2.7288rem;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        display: none;
+                        z-index: 1000;
+                    }
+                }
+            }
+        }
+        .update-profile-svg {
+            display: flex;
+            align-items: center;
+            #a94ba0b8-26cf-4acb-8f4d-19fff06c7e94 {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.up-arrow {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s ease;
+    z-index: 1030;
+    .up-arrow-to-top {
+        cursor: pointer;
+    }
+}
+.scroll-up {
+    opacity: 1;
+    visibility: visible;
+    transition: .5s ease;
+}
