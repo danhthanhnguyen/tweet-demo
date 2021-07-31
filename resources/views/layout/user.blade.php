@@ -185,3 +185,6 @@
     <script src="{{ asset('js/follow.js') }}"></script>
     <script src="{{ asset('js/like.js') }}"></script>
 @endpush
+@push('title')
+    <title>{{ $user[0]->full_name }}</title>
+@endpush

@@ -43,3 +43,6 @@
 @push('scripts')
     <script src="{{ asset('js/update.js') }}"></script>
 @endpush
+@push('title')
+    <title>{{ $user->full_name }}</title>
+@endpush
