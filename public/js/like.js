@@ -3,6 +3,7 @@ const _token = document.querySelector('input[name="_token"]');
 const likeCounter = document.querySelectorAll(".like-counter");
 const avatar = document.querySelectorAll(".avatar");
 const trash = document.querySelectorAll(".trash");
+let req;
 
 // ajax for like features
 function likeTweets(target, counter) {
@@ -53,6 +54,7 @@ for (let i = 0; i < avatar.length; i++) {
     });
     avatar[i].addEventListener("mouseout", function() {
         try {
+            clearTimeout(req);
             this.removeChild(tooltipElement);
             return false;
         } catch(e) {
@@ -63,7 +65,7 @@ for (let i = 0; i < avatar.length; i++) {
 
 function userTooltip(target) {
     return new Promise(function(resolve, reject) {
-        setTimeout(function() {
+        req = setTimeout(function() {
             let xhr = new XMLHttpRequest();
             xhr.onload = function() {// onload: request finished and response
                 if(this.readyState == 4 && this.status == 200) {
