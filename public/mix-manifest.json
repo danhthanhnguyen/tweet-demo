@@ -1,4 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/home.css": "/css/home.css"
+    "/js/follow.js": "/js/follow.js",
+    "/js/like.js": "/js/like.js",
+    "/js/update.js": "/js/update.js",
+    "/js/bootstrap.js": "/js/bootstrap.js",
+    "/css/layout/home.css": "/css/layout/home.css",
+    "/css/auth/auth.css": "/css/auth/auth.css"
 }

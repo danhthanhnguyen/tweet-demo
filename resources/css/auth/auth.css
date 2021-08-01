@@ -13,7 +13,8 @@ body {
   padding: 25px 40px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
 }
 
 .registration-form .form-icon {
@@ -56,7 +57,8 @@ body {
   border-top: 1px solid #dee9ff;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
 }
 
 .registration-form .form-icon-svg #ea5e03e3-9574-4d13-87c6-536b7dd50c0f {
@@ -99,3 +101,4 @@ body {
     line-height: 70px;
   }
 }
+/*# sourceMappingURL=auth.css.map */

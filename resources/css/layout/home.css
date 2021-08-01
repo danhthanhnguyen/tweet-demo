@@ -1,11 +1,11 @@
-@import url(https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap);
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 @font-face {
-  src: url(/fonts/sofiapro-light.otf?7978d11b00722a17ccfa3208624a7ea4);
+  src: url("../../fonts/sofiapro-light.otf");
   font-family: "sofia-pro";
 }
 
 @font-face {
-  src: url(/fonts/cubano-regular.ttf?94f20d018fc05bf57862f8821dd57d0a);
+  src: url("../../fonts/cubano-regular.ttf");
   font-family: "cubano-regular";
 }
 
@@ -17,21 +17,25 @@ html {
 
 .btn-control {
   border: none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   border-radius: 18px;
   background: #00acc1 !important;
   font-family: "cubano-regular";
   padding: .34rem 1.78rem;
+  -webkit-transition: .5s ease;
   transition: .5s ease;
 }
 
 .btn-control:hover {
   background: #00A1B5 !important;
+  -webkit-transition: .5s ease;
   transition: .5s ease;
 }
 
 .btn-control:focus {
-  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .navbar {
@@ -85,7 +89,8 @@ html {
   border-radius: 3px;
   cursor: auto;
   z-index: 1000001;
-  box-shadow: -3px 3px 2px 0 rgba(60, 65, 67, 0.12), 0 3px 1px -2px rgba(60, 65, 67, 0.18), -3px 3px 5px 0 rgba(60, 65, 67, 0.15);
+  -webkit-box-shadow: -3px 3px 2px 0 rgba(60, 65, 67, 0.12), 0 3px 1px -2px rgba(60, 65, 67, 0.18), -3px 3px 5px 0 rgba(60, 65, 67, 0.15);
+          box-shadow: -3px 3px 2px 0 rgba(60, 65, 67, 0.12), 0 3px 1px -2px rgba(60, 65, 67, 0.18), -3px 3px 5px 0 rgba(60, 65, 67, 0.15);
   -webkit-animation: zoomTooltip forwards 0.35s cubic-bezier(1, 0.25, 0, 0.78);
           animation: zoomTooltip forwards 0.35s cubic-bezier(1, 0.25, 0, 0.78);
 }
@@ -97,7 +102,8 @@ html {
   border-bottom: 5px solid #3c4146;
   top: 0;
   left: 24px;
-  transform: translate(-50%, -99%);
+  -webkit-transform: translate(-50%, -99%);
+          transform: translate(-50%, -99%);
 }
 
 .main .avatar .active-tooltip .tooltip-avatar-user {
@@ -161,8 +167,12 @@ html {
 .main .user-profile .location .location-name-country, .main .user-profile .location .user-birthday, .main .user-profile .location .user-joined, .main .user-profile .birthday .location-name-country, .main .user-profile .birthday .user-birthday, .main .user-profile .birthday .user-joined, .main .user-profile .joined .location-name-country, .main .user-profile .joined .user-birthday, .main .user-profile .joined .user-joined {
   padding: 0 0.386rem;
   font-size: 1.2888rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
 }
 
 .main .user-profile .location .location-name-country svg, .main .user-profile .location .user-birthday svg, .main .user-profile .location .user-joined svg, .main .user-profile .birthday .location-name-country svg, .main .user-profile .birthday .user-birthday svg, .main .user-profile .birthday .user-joined svg, .main .user-profile .joined .location-name-country svg, .main .user-profile .joined .user-birthday svg, .main .user-profile .joined .user-joined svg {
@@ -185,13 +195,15 @@ html {
 }
 
 .main .like-tweet svg #heart {
-  transform-origin: center;
+  -webkit-transform-origin: center;
+          transform-origin: center;
   -webkit-animation: animateHeartOut .3s linear forwards;
           animation: animateHeartOut .3s linear forwards;
 }
 
 .main .like-tweet svg #main-circ {
-  transform-origin: 29.5px 29.5px;
+  -webkit-transform-origin: 29.5px 29.5px;
+          transform-origin: 29.5px 29.5px;
 }
 
 .main .like-tweet .checkbox {
@@ -199,13 +211,15 @@ html {
 }
 
 .main .like-tweet .checkbox:checked + label svg #heart {
-  transform: scale(0.2);
+  -webkit-transform: scale(0.2);
+          transform: scale(0.2);
   fill: #E2264D;
   -webkit-animation: animateHeart .3s linear forwards .25s;
           animation: animateHeart .3s linear forwards .25s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #main-circ {
+  -webkit-transition: all 2s;
   transition: all 2s;
   -webkit-animation: animateCircle .3s linear forwards;
           animation: animateCircle .3s linear forwards;
@@ -214,192 +228,268 @@ html {
 
 .main .like-tweet .checkbox:checked + label svg #grp1 {
   opacity: 1;
+  -webkit-transition: .1s all .3s;
   transition: .1s all .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp1 #oval1 {
-  transform: scale(0) translate(0, -30px);
-  transform-origin: 0 0 0;
+  -webkit-transform: scale(0) translate(0, -30px);
+          transform: scale(0) translate(0, -30px);
+  -webkit-transform-origin: 0 0 0;
+          transform-origin: 0 0 0;
+  -webkit-transition: .5s transform .3s;
   transition: .5s transform .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp1 #oval2 {
-  transform: scale(0) translate(10px, -50px);
-  transform-origin: 0 0 0;
+  -webkit-transform: scale(0) translate(10px, -50px);
+          transform: scale(0) translate(10px, -50px);
+  -webkit-transform-origin: 0 0 0;
+          transform-origin: 0 0 0;
+  -webkit-transition: 1.5s -webkit-transform .3s;
+  transition: 1.5s -webkit-transform .3s;
   transition: 1.5s transform .3s;
+  transition: 1.5s transform .3s, 1.5s -webkit-transform .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp2 {
   opacity: 1;
+  -webkit-transition: .1s all .3s;
   transition: .1s all .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp2 #oval1 {
-  transform: scale(0) translate(30px, -15px);
-  transform-origin: 0 0 0;
+  -webkit-transform: scale(0) translate(30px, -15px);
+          transform: scale(0) translate(30px, -15px);
+  -webkit-transform-origin: 0 0 0;
+          transform-origin: 0 0 0;
+  -webkit-transition: .5s transform .3s;
   transition: .5s transform .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp2 #oval2 {
-  transform: scale(0) translate(60px, -15px);
-  transform-origin: 0 0 0;
+  -webkit-transform: scale(0) translate(60px, -15px);
+          transform: scale(0) translate(60px, -15px);
+  -webkit-transform-origin: 0 0 0;
+          transform-origin: 0 0 0;
+  -webkit-transition: 1.5s -webkit-transform .3s;
+  transition: 1.5s -webkit-transform .3s;
   transition: 1.5s transform .3s;
+  transition: 1.5s transform .3s, 1.5s -webkit-transform .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp3 {
   opacity: 1;
+  -webkit-transition: .1s all .3s;
   transition: .1s all .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp3 #oval1 {
-  transform: scale(0) translate(30px, 0px);
-  transform-origin: 0 0 0;
+  -webkit-transform: scale(0) translate(30px, 0px);
+          transform: scale(0) translate(30px, 0px);
+  -webkit-transform-origin: 0 0 0;
+          transform-origin: 0 0 0;
+  -webkit-transition: .5s transform .3s;
   transition: .5s transform .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp3 #oval2 {
-  transform: scale(0) translate(60px, 10px);
-  transform-origin: 0 0 0;
+  -webkit-transform: scale(0) translate(60px, 10px);
+          transform: scale(0) translate(60px, 10px);
+  -webkit-transform-origin: 0 0 0;
+          transform-origin: 0 0 0;
+  -webkit-transition: 1.5s -webkit-transform .3s;
+  transition: 1.5s -webkit-transform .3s;
   transition: 1.5s transform .3s;
+  transition: 1.5s transform .3s, 1.5s -webkit-transform .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp4 {
   opacity: 1;
+  -webkit-transition: .1s all .3s;
   transition: .1s all .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp4 #oval1 {
-  transform: scale(0) translate(30px, 15px);
-  transform-origin: 0 0 0;
+  -webkit-transform: scale(0) translate(30px, 15px);
+          transform: scale(0) translate(30px, 15px);
+  -webkit-transform-origin: 0 0 0;
+          transform-origin: 0 0 0;
+  -webkit-transition: .5s transform .3s;
   transition: .5s transform .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp4 #oval2 {
-  transform: scale(0) translate(40px, 50px);
-  transform-origin: 0 0 0;
+  -webkit-transform: scale(0) translate(40px, 50px);
+          transform: scale(0) translate(40px, 50px);
+  -webkit-transform-origin: 0 0 0;
+          transform-origin: 0 0 0;
+  -webkit-transition: 1.5s -webkit-transform .3s;
+  transition: 1.5s -webkit-transform .3s;
   transition: 1.5s transform .3s;
+  transition: 1.5s transform .3s, 1.5s -webkit-transform .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp5 {
   opacity: 1;
+  -webkit-transition: .1s all .3s;
   transition: .1s all .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp5 #oval1 {
-  transform: scale(0) translate(-10px, 20px);
-  transform-origin: 0 0 0;
+  -webkit-transform: scale(0) translate(-10px, 20px);
+          transform: scale(0) translate(-10px, 20px);
+  -webkit-transform-origin: 0 0 0;
+          transform-origin: 0 0 0;
+  -webkit-transition: .5s transform .3s;
   transition: .5s transform .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp5 #oval2 {
-  transform: scale(0) translate(-60px, 30px);
-  transform-origin: 0 0 0;
+  -webkit-transform: scale(0) translate(-60px, 30px);
+          transform: scale(0) translate(-60px, 30px);
+  -webkit-transform-origin: 0 0 0;
+          transform-origin: 0 0 0;
+  -webkit-transition: 1.5s -webkit-transform .3s;
+  transition: 1.5s -webkit-transform .3s;
   transition: 1.5s transform .3s;
+  transition: 1.5s transform .3s, 1.5s -webkit-transform .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp6 {
   opacity: 1;
+  -webkit-transition: .1s all .3s;
   transition: .1s all .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp6 #oval1 {
-  transform: scale(0) translate(-30px, 0px);
-  transform-origin: 0 0 0;
+  -webkit-transform: scale(0) translate(-30px, 0px);
+          transform: scale(0) translate(-30px, 0px);
+  -webkit-transform-origin: 0 0 0;
+          transform-origin: 0 0 0;
+  -webkit-transition: .5s transform .3s;
   transition: .5s transform .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp6 #oval2 {
-  transform: scale(0) translate(-60px, -5px);
-  transform-origin: 0 0 0;
+  -webkit-transform: scale(0) translate(-60px, -5px);
+          transform: scale(0) translate(-60px, -5px);
+  -webkit-transform-origin: 0 0 0;
+          transform-origin: 0 0 0;
+  -webkit-transition: 1.5s -webkit-transform .3s;
+  transition: 1.5s -webkit-transform .3s;
   transition: 1.5s transform .3s;
+  transition: 1.5s transform .3s, 1.5s -webkit-transform .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp7 {
   opacity: 1;
+  -webkit-transition: .1s all .3s;
   transition: .1s all .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp7 #oval1 {
-  transform: scale(0) translate(-30px, -15px);
-  transform-origin: 0 0 0;
+  -webkit-transform: scale(0) translate(-30px, -15px);
+          transform: scale(0) translate(-30px, -15px);
+  -webkit-transform-origin: 0 0 0;
+          transform-origin: 0 0 0;
+  -webkit-transition: .5s transform .3s;
   transition: .5s transform .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp7 #oval2 {
-  transform: scale(0) translate(-55px, -30px);
-  transform-origin: 0 0 0;
+  -webkit-transform: scale(0) translate(-55px, -30px);
+          transform: scale(0) translate(-55px, -30px);
+  -webkit-transform-origin: 0 0 0;
+          transform-origin: 0 0 0;
+  -webkit-transition: 1.5s -webkit-transform .3s;
+  transition: 1.5s -webkit-transform .3s;
   transition: 1.5s transform .3s;
+  transition: 1.5s transform .3s, 1.5s -webkit-transform .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp2 {
   opacity: 1;
+  -webkit-transition: .1s opacity .3s;
   transition: .1s opacity .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp3 {
   opacity: 1;
+  -webkit-transition: .1s opacity .3s;
   transition: .1s opacity .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp4 {
   opacity: 1;
+  -webkit-transition: .1s opacity .3s;
   transition: .1s opacity .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp5 {
   opacity: 1;
+  -webkit-transition: .1s opacity .3s;
   transition: .1s opacity .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp6 {
   opacity: 1;
+  -webkit-transition: .1s opacity .3s;
   transition: .1s opacity .3s;
 }
 
 .main .like-tweet .checkbox:checked + label svg #grp7 {
   opacity: 1;
+  -webkit-transition: .1s opacity .3s;
   transition: .1s opacity .3s;
 }
 
 @-webkit-keyframes animateCircle {
   40% {
-    transform: scale(10);
+    -webkit-transform: scale(10);
+            transform: scale(10);
     opacity: 1;
     fill: #DD4688;
   }
   55% {
-    transform: scale(11);
+    -webkit-transform: scale(11);
+            transform: scale(11);
     opacity: 1;
     fill: #D46ABF;
   }
   65% {
-    transform: scale(12);
+    -webkit-transform: scale(12);
+            transform: scale(12);
     opacity: 1;
     fill: #CC8EF5;
   }
   75% {
-    transform: scale(13);
+    -webkit-transform: scale(13);
+            transform: scale(13);
     opacity: 1;
     fill: transparent;
     stroke: #CC8EF5;
     stroke-width: .5;
   }
   85% {
-    transform: scale(17);
+    -webkit-transform: scale(17);
+            transform: scale(17);
     opacity: 1;
     fill: transparent;
     stroke: #CC8EF5;
     stroke-width: .2;
   }
   95% {
-    transform: scale(18);
+    -webkit-transform: scale(18);
+            transform: scale(18);
     opacity: 1;
     fill: transparent;
     stroke: #CC8EF5;
     stroke-width: .1;
   }
   100% {
-    transform: scale(19);
+    -webkit-transform: scale(19);
+            transform: scale(19);
     opacity: 1;
     fill: transparent;
     stroke: #CC8EF5;
@@ -409,43 +499,50 @@ html {
 
 @keyframes animateCircle {
   40% {
-    transform: scale(10);
+    -webkit-transform: scale(10);
+            transform: scale(10);
     opacity: 1;
     fill: #DD4688;
   }
   55% {
-    transform: scale(11);
+    -webkit-transform: scale(11);
+            transform: scale(11);
     opacity: 1;
     fill: #D46ABF;
   }
   65% {
-    transform: scale(12);
+    -webkit-transform: scale(12);
+            transform: scale(12);
     opacity: 1;
     fill: #CC8EF5;
   }
   75% {
-    transform: scale(13);
+    -webkit-transform: scale(13);
+            transform: scale(13);
     opacity: 1;
     fill: transparent;
     stroke: #CC8EF5;
     stroke-width: .5;
   }
   85% {
-    transform: scale(17);
+    -webkit-transform: scale(17);
+            transform: scale(17);
     opacity: 1;
     fill: transparent;
     stroke: #CC8EF5;
     stroke-width: .2;
   }
   95% {
-    transform: scale(18);
+    -webkit-transform: scale(18);
+            transform: scale(18);
     opacity: 1;
     fill: transparent;
     stroke: #CC8EF5;
     stroke-width: .1;
   }
   100% {
-    transform: scale(19);
+    -webkit-transform: scale(19);
+            transform: scale(19);
     opacity: 1;
     fill: transparent;
     stroke: #CC8EF5;
@@ -455,43 +552,53 @@ html {
 
 @-webkit-keyframes animateHeart {
   0% {
-    transform: scale(0.2);
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
   }
   40% {
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @keyframes animateHeart {
   0% {
-    transform: scale(0.2);
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
   }
   40% {
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @-webkit-keyframes animateHeartOut {
   0% {
-    transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @keyframes animateHeartOut {
   0% {
-    transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
@@ -540,7 +647,8 @@ html {
 
 .main .update-profile .jumbotron {
   background-color: rgba(230, 230, 230, 0.3);
-  box-shadow: -3px 3px 2px 0 rgba(230, 230, 230, 0.38), 0 3px 1px -2px rgba(230, 230, 230, 0.3), -3px 3px 5px 0 rgba(230, 230, 230, 0.32);
+  -webkit-box-shadow: -3px 3px 2px 0 rgba(230, 230, 230, 0.38), 0 3px 1px -2px rgba(230, 230, 230, 0.3), -3px 3px 5px 0 rgba(230, 230, 230, 0.32);
+          box-shadow: -3px 3px 2px 0 rgba(230, 230, 230, 0.38), 0 3px 1px -2px rgba(230, 230, 230, 0.3), -3px 3px 5px 0 rgba(230, 230, 230, 0.32);
   border-radius: 1.28rem;
 }
 
@@ -583,6 +691,7 @@ html {
 }
 
 .main .update-profile .jumbotron .update-avatar-user .upload label {
+  -webkit-transition: .5s ease;
   transition: .5s ease;
   width: 100%;
   height: 100%;
@@ -597,6 +706,7 @@ html {
 
 .main .update-profile .jumbotron .update-avatar-user .upload label:hover {
   background-color: rgba(0, 0, 0, 0.4);
+  -webkit-transition: .5s ease;
   transition: .5s ease;
 }
 
@@ -606,14 +716,19 @@ html {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   display: none;
   z-index: 1000;
 }
 
 .main .update-profile .update-profile-svg {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main .update-profile .update-profile-svg #a94ba0b8-26cf-4acb-8f4d-19fff06c7e94 {
@@ -627,6 +742,7 @@ html {
   padding: 1rem;
   opacity: 0;
   visibility: hidden;
+  -webkit-transition: .5s ease;
   transition: .5s ease;
   z-index: 1030;
 }
@@ -638,5 +754,7 @@ html {
 .scroll-up {
   opacity: 1;
   visibility: visible;
+  -webkit-transition: .5s ease;
   transition: .5s ease;
 }
+/*# sourceMappingURL=home.css.map */
