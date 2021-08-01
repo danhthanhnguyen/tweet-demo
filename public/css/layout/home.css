@@ -69,6 +69,8 @@ html {
 .main .avatar .avatar-user {
   width: 48px;
   height: 48px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .main .avatar .active-tooltip {
@@ -609,6 +611,8 @@ html {
 .main .user-avatar .user-profile-avatar {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .main .user-profile-name {
@@ -666,6 +670,8 @@ html {
 .main .update-profile .jumbotron .update-avatar-user .avatar {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .main .update-profile .jumbotron .update-avatar-user .active-upload {

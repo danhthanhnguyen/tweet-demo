@@ -63,6 +63,7 @@ html {
         .avatar-user {
             width: 48px;
             height: 48px;
+            object-fit: cover;
         }
         .active-tooltip {
             position: relative;
@@ -399,6 +400,7 @@ html {
         .user-profile-avatar {
             width: 100%;
             height: 100%;
+            object-fit: cover;
         }
     }
     .user-profile-name {
@@ -444,6 +446,7 @@ html {
                 .avatar {
                     width: 100%;
                     height: 100%;
+                    object-fit: cover;
                 }
                 .active-upload {
                     display: block!important;
