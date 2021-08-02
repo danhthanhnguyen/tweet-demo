@@ -34,7 +34,7 @@
             <div class="form-label-group mt-3">
                 <input type="checkbox" id="remember" name="remember">
                 <label for="remember">Remember me</label>
-                <a class="forgot-password float-right" href="{{ route('register') }}"><span>Forgot password?</span></a>
+                <a class="forgot-password float-right" href="{{ route('password.request') }}"><span>Forgot password?</span></a>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-block btn-form">Sign in</button>

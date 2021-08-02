@@ -24,7 +24,7 @@ class RegisterController extends Controller
         $request->validate([
             'name' => 'required|alpha_dash|unique:users',
             'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed'
+            'password' => 'required|min:8|confirmed'
         ]);
         //create new account
         DB::table('users')->insert([
