@@ -872,7 +872,7 @@ function likeTweets(target, counter) {
     }
   };
 
-  xhr.open("POST", "http://127.0.0.1:8000/tweet/like", true);
+  xhr.open("POST", "/tweet/like", true);
   xhr.setRequestHeader("X-CSRF-Token", _token.value);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.send("tweet_id=".concat(target.id, "&status=").concat(target.checked));
@@ -986,7 +986,7 @@ function deleteTweet(target) {
     }
   };
 
-  xhr.open("POST", "http://127.0.0.1:8000/tweet/delete", true);
+  xhr.open("POST", "/tweet/delete", true);
   xhr.setRequestHeader("X-CSRF-Token", _token.value);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.send("id=".concat(target.getAttribute("id")));

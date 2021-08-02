@@ -3,7 +3,10 @@ var __webpack_exports__ = {};
 /*!********************************!*\
   !*** ./resources/js/follow.js ***!
   \********************************/
-var follow = document.querySelector(".follow"); // ajax for follow features
+var follow = document.querySelector(".follow");
+
+var _token = document.querySelector('input[name="_token"]'); // ajax for follow features
+
 
 if (follow) {
   follow.addEventListener("click", function () {
@@ -15,7 +18,7 @@ if (follow) {
       }
     };
 
-    xhr.open("POST", "http://127.0.0.1:8000/".concat(follow.getAttribute("aria-label"), "/follow"), true);
+    xhr.open("POST", "/".concat(follow.getAttribute("aria-label"), "/follow"), true);
     xhr.setRequestHeader("X-CSRF-Token", _token.value);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send("user=".concat(follow.getAttribute("aria-label")));

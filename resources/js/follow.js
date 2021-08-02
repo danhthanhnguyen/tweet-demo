@@ -1,4 +1,5 @@
 const follow = document.querySelector(".follow");
+const _token = document.querySelector('input[name="_token"]');
 
 // ajax for follow features
 if(follow) {
@@ -9,7 +10,7 @@ if(follow) {
                 follow.textContent = this.responseText;
             }
         }
-        xhr.open("POST", `http://127.0.0.1:8000/${follow.getAttribute("aria-label")}/follow`, true);
+        xhr.open("POST", `/${follow.getAttribute("aria-label")}/follow`, true);
         xhr.setRequestHeader("X-CSRF-Token", _token.value);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.send(`user=${follow.getAttribute("aria-label")}`);
