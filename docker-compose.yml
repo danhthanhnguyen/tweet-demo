@@ -1,0 +1,49 @@
+version: "3"
+
+# Create networks
+networks:
+  tweet-network:
+    driver: bridge
+
+# Create volumes
+volumes:
+  tweet-volume:
+    driver_opts:
+      devices: /home/thanhnguyen/Web/tweet
+      o: bind
+
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+    image: tweet-image
+    container_name: tweet-app
+    restart: always
+    working_dir: /var/www
+    volumes: 
+      - ./:/var/www
+    networks:
+      - tweet-network
+  db:
+    image: mysql:latest
+    container_name: tweet-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+    volumes:
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - tweet-network
+  httpd:
+    image: httpd:alpine3.14
+    container_name: tweet-httpd
+    restart: always
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www
+    networks:
+      - tweet-network
