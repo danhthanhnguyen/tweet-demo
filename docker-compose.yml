@@ -7,14 +7,24 @@ networks:
 
 # Create volumes
 volumes:
-  tweet-volume:
+  database:
     driver_opts:
-      devices: /home/thanhnguyen/Web/tweet
+      device: ./docker-compose/mysql
+      type: none
+      o: bind
+  server:
+    driver_opts:
+      device: ./docker-compose/httpd
+      type: none
       o: bind
 
 services:
   app:
     build:
+      args:
+        user: thanhnguyen
+        uid: 1000
+      context: ./
       dockerfile: Dockerfile
     image: tweet-image
     container_name: tweet-app
@@ -32,9 +42,9 @@ services:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_USER: "thanhnguyen"
     volumes:
-      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+      - database:/var/lib/mysql
     networks:
       - tweet-network
   httpd:
@@ -45,5 +55,6 @@ services:
       - 8000:80
     volumes:
       - ./:/var/www
+      - server:/etc/httpd/conf.d
     networks:
       - tweet-network
